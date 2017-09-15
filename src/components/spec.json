@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v3.0.json",
+  "width": 500,
+  "height": 80,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "text-timeline",
+      "values": [
+        {
+          "text": "Some text",
+          "timestamp": "1505404800000",
+          "DOI": "0"
+        },
+        {
+          "text": "Some text 2",
+          "timestamp": "1473868800000",
+          "DOI": "0"
+        },
+        {
+          "text": "Some text 3",
+          "timestamp": "1442246400000",
+          "DOI": "0"
+        },
+        {
+          "text": "Some text 4",
+          "timestamp": "1410710400000",
+          "DOI": "0"
+        }
+      ]      
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "yscale",
+      "type": "band",
+      "range": [0, {"signal": "height"}],
+      "domain": {"data": "text-timeline", "field": "text"},
+      "title": "Text"
+    },
+    {
+      "name": "xscale",
+      "type": "time",
+      "range": "width",
+      "round": true,
+      "domain": {"data": "text-timeline", "field": "timestamp"}
+    }
+  ],
+
+  "axes": [
+    {"orient": "bottom", "scale": "xscale", "title": "Time"}   
+  ],
+
+  "marks": [
+    {
+      "type": "symbol",
+      "from": {"data": "text-timeline"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "timestamp"},
+          "size": {"value": 50}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "text-timeline"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "timestamp"},
+          "y": {"value": -10},
+          "angle": {"value": -25},
+          "fill": {"value": "#000"},
+          "text": {"field": "text"},
+          "fontSize": {"value": 10}
+        }
+      }
+    }
+  ]
+}
