@@ -6,8 +6,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13",
-    "vega": "^3.0.2",
-    "vega-tooltip": "^0.4.4"
+    "vega": "^3.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

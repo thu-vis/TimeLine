@@ -14,17 +14,14 @@ export default class Renderer extends React.Component {
       view = new vega.View(runtime)
       .logLevel(vega.Warn)
       .initialize(this.refs.chart)
-      .renderer('canvas')
+      .renderer('svg')
       .hover()
       .run();
     } catch (err) {
-      console.log(err);
+      window.alert(err);
       throw err;
     }
     this.refs.chart.style.width = 'auto';
-    if (this.props.tooltip) {
-      vegaTooltip.vega(view);
-    }
   }
 
   componentDidMount() {

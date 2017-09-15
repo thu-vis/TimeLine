@@ -1814,7 +1814,7 @@ d3-force@1:
     d3-quadtree "1"
     d3-timer "1"
 
-d3-format@1, d3-format@^1.2.0:
+d3-format@1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.2.0.tgz#6b480baa886885d4651dc248a8f4ac9da16db07a"
 
@@ -1883,17 +1883,13 @@ d3-scale@1:
     d3-time "1"
     d3-time-format "2"
 
-d3-selection@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-1.1.0.tgz#1998684896488f839ca0372123da34f1d318809c"
-
 d3-shape@1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.2.0.tgz#45d01538f064bafd05ea3d6d2cb748fd8c41f777"
   dependencies:
     d3-path "1"
 
-d3-time-format@2, d3-time-format@^2.0.5:
+d3-time-format@2:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/d3-time-format/-/d3-time-format-2.0.5.tgz#9d7780204f7c9119c9170b1a56db4de9a8af972e"
   dependencies:
@@ -6393,10 +6389,6 @@ tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
 
-tslib@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
-
 tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
@@ -6627,7 +6619,7 @@ vega-encode@2:
     vega-scale "2"
     vega-util "1"
 
-vega-event-selector@2, vega-event-selector@^2.0.0:
+vega-event-selector@2:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vega-event-selector/-/vega-event-selector-2.0.0.tgz#6af8dc7345217017ceed74e9155b8d33bad05d42"
 
@@ -6664,16 +6656,6 @@ vega-hierarchy@2:
     d3-hierarchy "1"
     vega-dataflow "3"
     vega-util "1"
-
-vega-lite@^2.0.0-beta.14:
-  version "2.0.0-rc2"
-  resolved "https://registry.yarnpkg.com/vega-lite/-/vega-lite-2.0.0-rc2.tgz#d6acb56d39bf231c364fc1c827a8e62b54ad03c4"
-  dependencies:
-    json-stable-stringify "^1.0.1"
-    tslib "^1.7.1"
-    vega-event-selector "^2.0.0"
-    vega-util "^1.5.0"
-    yargs "^8.0.2"
 
 vega-loader@2:
   version "2.0.1"
@@ -6741,16 +6723,6 @@ vega-statistics@1:
   dependencies:
     d3-array "1"
 
-vega-tooltip@^0.4.4:
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/vega-tooltip/-/vega-tooltip-0.4.4.tgz#c2dd6f24ffe5eda64a920e505f86c3551e819155"
-  dependencies:
-    d3-format "^1.2.0"
-    d3-selection "^1.1.0"
-    d3-time-format "^2.0.5"
-    vega "^3.0.0"
-    vega-lite "^2.0.0-beta.14"
-
 vega-transforms@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vega-transforms/-/vega-transforms-1.0.2.tgz#8c3af144f4b1d1240cc8c881cb30d3a73ae839a5"
@@ -6760,7 +6732,7 @@ vega-transforms@1:
     vega-statistics "1"
     vega-util "1"
 
-vega-util@1, vega-util@^1.1, vega-util@^1.5.0:
+vega-util@1, vega-util@^1.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/vega-util/-/vega-util-1.5.0.tgz#05fcec83557be38de5328b54ad2a7a0597740cc0"
 
@@ -6801,7 +6773,7 @@ vega-wordcloud@2:
   optionalDependencies:
     canvas "^1.6.0"
 
-vega@^3.0.0, vega@^3.0.2:
+vega@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/vega/-/vega-3.0.2.tgz#51233d2aabf1b13b2aaffe66845838639474364f"
   dependencies:

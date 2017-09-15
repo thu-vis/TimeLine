@@ -2,33 +2,18 @@
   "$schema": "https://vega.github.io/schema/vega/v3.0.json",
   "width": 500,
   "height": 80,
-  "padding": 5,
+  "padding": 50,
 
   "data": [
     {
-      "name": "text-timeline",
-      "values": [
-        {
-          "text": "Some text",
-          "timestamp": "1505404800000",
-          "DOI": "0"
-        },
-        {
-          "text": "Some text 2",
-          "timestamp": "1473868800000",
-          "DOI": "0"
-        },
-        {
-          "text": "Some text 3",
-          "timestamp": "1442246400000",
-          "DOI": "0"
-        },
-        {
-          "text": "Some text 4",
-          "timestamp": "1410710400000",
-          "DOI": "0"
-        }
-      ]      
+      "name": "text-timeline"   
+    },
+    {
+      "name": "description",
+      "source": "text-timeline",
+      "transform": [
+        {"type": "filter", "expr": "description && datum.description == description.description"}
+      ]
     }
   ],
 
@@ -37,8 +22,7 @@
       "name": "yscale",
       "type": "band",
       "range": [0, {"signal": "height"}],
-      "domain": {"data": "text-timeline", "field": "text"},
-      "title": "Text"
+      "domain": {"data": "text-timeline", "field": "text"}
     },
     {
       "name": "xscale",
@@ -54,14 +38,21 @@
   ],
 
   "marks": [
-    {
+    { 
+      "name": "point",
       "type": "symbol",
       "from": {"data": "text-timeline"},
       "encode": {
         "enter": {
           "x": {"scale": "xscale", "field": "timestamp"},
-          "size": {"value": 50}
-        }
+          "size": {"value": 500}
+        },
+        "hover": {
+          "fillOpacity": {"value": 1}
+        },
+        "update": {
+          "fillOpacity": {"value": 0.6}
+        }      
       }
     },
     {
@@ -71,12 +62,38 @@
         "enter": {
           "x": {"scale": "xscale", "field": "timestamp"},
           "y": {"value": -10},
-          "angle": {"value": -25},
           "fill": {"value": "#000"},
           "text": {"field": "text"},
           "fontSize": {"value": 10}
         }
       }
+    },
+    {
+      "type": "text",
+      "from": {"data": "description"},
+      "encode": {
+        "update": {
+          "x": {"scale": "xscale", "field": "timestamp"},
+          "y": {"value": 20},
+          "text": {"field": "description"}
+        }
+      }
     }
-  ]
+  ],
+
+  "signals": [
+    {
+      "name": "description",
+      "value": {},
+      "on": [
+        {"events": "@point:mouseover", "update": "datum"},
+        {"events": "@point:mouseout", "update": "{}"}
+      ]
+    } 
+  ],
+
+  "title": {
+    "text": "Text Timeline",
+    "orient": "bottom"
+  }
 }
